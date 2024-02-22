@@ -31,7 +31,7 @@ body {
   }
   
   .choices button {
-    display: inline-block;
+    display: block;
   }
   
   input[type="text"] {
@@ -49,9 +49,9 @@ body {
     list-style: decimal inside none;
   }
   
-  /* li:nth-child(odd) {
+  li:nth-child(odd) {
     background-color: #f3edfc;
-  } */
+  }
   
   .wrapper {
     margin: 100px auto 0 auto;
