@@ -26,6 +26,7 @@ In case of an incorrect option selection, a different sound is played, the feedb
 
 9. Subsequently, the user is redirected to a page containing a list of high scores retrieved from the browser's local storage using the `localStorage.getItem` method. These scores are sorted in descending order based on the scores.
 
+10. There's also a button on the highscores page that deletes all the highscore entry from the browser's local storage. This was achieved using the `localStorage.removeItem` method.
 
 
 ## Mock-Up
