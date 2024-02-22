@@ -1,86 +1,50 @@
 # code-quiz
-DTTP (Skillhat) - Code Quiz Project developed with Javascript 
+Code Quiz Project developed with Javascript 
 
-## Your Task
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
+## Description
+In this project, Javascript is used to build a timed coding quiz with multiple-choice questions. This web application runs in the browser and features dynamically updated HTML and CSS. It has a clean, polished, and responsive user interface. 
 
-To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
+## Implementation
+1. The quiz implementation begins by initializing variables to track the quiz state and reference different DOM elements on the HTML page. Subsequently, a series of functions are created to perform various tasks related to the project.
 
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
+2. The `startQuiz` function is linked to the start button and is invoked when the user clicks on it to commence the code quiz.
 
-## User Story
+3.  Following this, a timer is set to 75 (calculated as the total number of questions in the quiz multiplied by 15) and begins counting down using the `setInterval` method.
 
-```
-AS A coding student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+4. Next, a function is developed to display questions and options retrieved from a predefined array of objects containing question details.
 
-## Acceptance Criteria
+5. Once the question and options are presented, the user can click on an option. 
+If the user selects the correct option, a sound is played, and the feedback "Correct" is displayed briefly for half a second using the `setTimeout` method. Subsequently, the next question (if available) is presented. 
+In case of an incorrect option selection, a different sound is played, the feedback "Wrong" is displayed for half a second, and 15 seconds are deducted from the timer (if more than 15 seconds remain). The next question is then presented, if available and if there is still time.
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-```
+6. The cycle in (5) above continues until the user completes the quiz or the timer reaches zero.
+
+7. Upon completion, the user is presented with a view displaying the final score (representing the number of seconds left) and an input box to enter their initials. 
+
+8. After input and submission, or upon pressing the Enter key, the user's initials and score are saved to the browser's local storage using the `localStorage.setItem` method.
+
+9. Subsequently, the user is redirected to a page containing a list of high scores retrieved from the browser's local storage using the `localStorage.getItem` method. These scores are sorted in descending order based on the scores.
+
+
 
 ## Mock-Up
+The screen shot below demonstrates the application functionality:
 
-The following screen shot demonstrates the application functionality - refer to the image "04-web-apis-homework-demo.gif" in the assets folder for a reference; you can open up that image in your web browser.:
+![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.][page-1]
 
-![A user clicks through an interactive coding quiz, then enters initials to save the high score before resetting and starting over.](./Assets/04-web-apis-homework-demo.gif)
 
-## Grading Requirements
+## Live
+[Click here](https://umukulthum.github.io/code-quiz) for the deployed url 
 
-This Challenge is graded based on the following criteria: 
 
-### Technical Acceptance Criteria: 40%
+## Repository
+[Click here](https://github.com/Umukulthum/code-quiz) for the project's GitHub repository
 
-* Satisfies all of the preceding acceptance criteria.
 
-### Deployment: 32%
+[page-1]: assets/images/04-web-apis-homework-demo.gif
 
-* Application deployed at live URL.
 
-* Application loads with no errors.
 
-* Application GitHub URL submitted.
 
-* GitHub repository contains application code.
 
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality readme file with description, screenshot, and link to deployed application.
-
-## Review
-
-You are required to submit BOTH of the following for review via Google Classroom:
-
-* The URL of the functional, deployed application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
